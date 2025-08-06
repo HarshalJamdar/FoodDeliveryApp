@@ -1,11 +1,11 @@
-
+import { RESTRO_LOGO_BASE_URL } from '../utils/constants';
 const RestaurantCard = ({ resData }) => {
   const { name, cuisines, avgRating, costForTwo, sla } = resData?.info;
 
   return(
     <div className='res-card' >
       <img 
-        src={'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/' + resData.info.cloudinaryImageId} 
+        src={RESTRO_LOGO_BASE_URL + resData.info.cloudinaryImageId} 
         alt='res-logo' 
         className='res-logo'
       />
