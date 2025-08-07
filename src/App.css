@@ -22,10 +22,6 @@
   margin: 10px;
 }
 
-.body {
-  
-}
-
 .res-card {
   width: 200px;
   padding: 5px;
@@ -36,7 +32,6 @@
 }
 
 .res-card:hover {
-  /* border: 1px solid black; */
   transform: scale(0.95, 0.95);
   transform-origin: center center;
   transition: 0.1s ease-in;
@@ -60,4 +55,31 @@
 .filter-btn {
   margin: 10px;
   cursor: pointer;
+}
+
+.shimmer-cotainer{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shimmer-card{
+  margin: 20px;
+  width: 180px;
+  height: 400px;
+  background-color: #f0f0f0;
+}
+
+.shimmer-img{
+  margin: 20px;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: lightgrey;
+}
+
+.shimmer-text{
+  background-color: lightgrey;
+  border-radius: 15px;
+  height: 20px;
+  margin: 20px;
 }

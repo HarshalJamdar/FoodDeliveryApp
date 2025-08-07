@@ -1,12 +1,23 @@
 import RestaurantCard from './RestaurantCard';
-import { resList } from '../utils/mockData';
-import { useState } from 'react';
- 
+import { useEffect, useState } from 'react';
+import { FETCH_DATA_URL } from '../utils/constants';
+import Shimmer from './Shimmer';
 
 const Body = () => {
-  const [listOfRestaurants, setListOfRestaurants] = useState(resList);
+  const [listOfRestaurants, setListOfRestaurants] = useState([]);
 
+  useEffect(() => {
+    fetchData();
+  }, []);
 
+  const fetchData = async () => {
+    const data = await fetch(FETCH_DATA_URL);
+    const json = await data?.json();
+
+    setListOfRestaurants(json?.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+  };
+
+  if(listOfRestaurants?.length === 0) return <Shimmer />;
   return(
     <div className='body'>
       <div className='filter'>
